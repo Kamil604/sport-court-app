@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rzut Boiska Sportowego</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projekt Boiska – Rzut z góry</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Rzut Boiska w Hali Sportowej</h1>
-        <canvas id="courtCanvas" width="800" height="400"></canvas>
-        <div>
-            <button onclick="clearCourt()">Wyczyść Boisko</button>
-        </div>
+  <h1>Projekt Boiska – Rzut z góry</h1>
+
+  <div class="controls">
+    <div class="panel">
+      <label for="fieldType">Typ boiska:</label>
+      <select id="fieldType">
+        <option value="basketball">Koszykówka</option>
+        <option value="volleyball">Siatkówka</option>
+        <option value="handball">Piłka ręczna</option>
+      </select>
     </div>
-    <script src="script.js"></script>
+
+    <div class="panel">
+      <label for="lineColor">Kolor linii:</label>
+      <input type="color" id="lineColor" value="#ff0000" />
+    </div>
+
+    <div class="panel">
+      <label for="fieldColor">Kolor pola:</label>
+      <input type="color" id="fieldColor" value="#dfffd6" />
+    </div>
+
+    <div class="panel">
+      <button onclick="drawField()">Rysuj boisko</button>
+    </div>
+
+    <div class="panel">
+      <button onclick="saveAsPNG()">Zapisz jako PNG</button>
+    </div>
+  </div>
+
+  <canvas id="fieldCanvas" width="800" height="500"></canvas>
+
+  <script src="script.js"></script>
 </body>
 </html>
